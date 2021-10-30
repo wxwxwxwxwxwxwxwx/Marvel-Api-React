@@ -17,7 +17,7 @@ class RandomChar extends Component {
 
     componentDidMount() {
         this.updateChar();
-        // this.timerId = setInterval(this.updateChar, 3000);
+        // this.timerId = setInterval(this.updateChar, 300);
     }
 
     componentWillUnmount() {
@@ -39,11 +39,12 @@ class RandomChar extends Component {
     }
 
     updateChar = () => {
-        const id = Math.floor(Math.random() * (1011400 - 1011300) + 1011000);
+        const id = Math.floor(Math.random() * (1011300 - 1011200) + 1011000);
         this.marvelService
             .getCharacterById(id)
             .then(this.onCharLoaded)
-            .catch(this.onError);
+            .catch(this.onError)
+            
     }
 
     render() {
@@ -65,7 +66,9 @@ class RandomChar extends Component {
                     <p className="randomchar__title">
                         Or choose another one
                     </p>
-                    <button className="button button__main">
+                    <button 
+                        className="button button__main"
+                        onClick={this.updateChar}>
                         <div className="inner">try it</div>
                     </button>
                     <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
@@ -78,6 +81,18 @@ class RandomChar extends Component {
 const View = ({char}) => {
 
     const {name, thumbnail, description, homepage, wiki} = char;
+
+    // let styleFit;
+
+    // if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
+    //     styleFit = {
+    //         objectFit: 'contain'
+    //     }
+    // } else {
+    //     styleFit = {
+    //         objectFit: 'cover'
+    //     }
+    // }
 
     return (
         <div className="randomchar__block">
