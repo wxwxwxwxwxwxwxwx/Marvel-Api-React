@@ -21,7 +21,9 @@ class CharInfo extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.charId !== prevProps.charId) {
-            this.updateChar();
+            this.updateChar({
+                error: true
+            });
         }
     }
 
@@ -108,10 +110,10 @@ const View = ({char}) => {
             <div className="char__comics">Comics:</div>
             <ul className="char__comics-list">
                 {
-                    (comics.length === 0) ? 
-                    <li className="char__comics-item">
-                    There is no comics for this character
-                    </li> :
+                    (comics.length === 0) 
+                    ? 
+                    <div>There is no comics for this character :(</div>
+                    :
                     comics.slice(0, 10).map((item, i) => {
                         return (
                             <li key={i} className="char__comics-item">
