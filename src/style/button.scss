@@ -88,4 +88,8 @@
     &:hover {
         transform: translateY(-5px);
     }
+    &:disabled {
+        transition: .3s all;
+        filter: grayscale(.5);
+    }
 }
