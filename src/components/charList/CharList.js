@@ -16,7 +16,7 @@ const CharList = (props) => {
     const [active, setActive] = useState(false);
     const itemRefs = useRef([]);
     
-    const marvelService = new MarvelService();
+    const marvelService = MarvelService();
 
     useEffect(() => {
         onRequest();
