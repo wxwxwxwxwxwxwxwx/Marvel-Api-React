@@ -40,11 +40,9 @@ const MarvelService = () => {
 
         return {
             id: comics.id,
-            // digitalId: comics.digitalId,
             title: comics.title,
             thumbnail: comics.thumbnail.path + '.' + comics.thumbnail.extension,
-            // issueNumber: comics.issueNumber
-            // variantDescription: "",
+            price: comics.prices[0].price + '$'
         }
     }
 

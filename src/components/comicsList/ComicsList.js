@@ -49,9 +49,9 @@ const ComicsList = (props) => {
                 <li 
                     className={'comics__item'}
                     key={item.id}
-                    onClick={() => {
-                        props.onCharSelected(item.id);
-                    }}
+                    // onClick={() => {
+                    //     props.onCharSelected(item.id);
+                    // }}
                     onKeyPress={(e) => {
                         if (e.key === ' ' || e.key === "Enter") {
                             props.onCharSelected(item.id);
@@ -60,7 +60,7 @@ const ComicsList = (props) => {
                     >
                         <img 
                             src={item.thumbnail} 
-                            alt={item.name} 
+                            alt={item.title}
                             className="comics__item-img"
                             />
                         <div className="comics__item-name">{item.title}</div>
