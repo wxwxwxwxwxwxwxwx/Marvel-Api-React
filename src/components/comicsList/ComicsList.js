@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import MarvelService from '../../services/MarvelService';
 import {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './comicsList.scss';
 
 const ComicsList = (props) => {
@@ -37,21 +38,14 @@ const ComicsList = (props) => {
     }
 
     const renderItems = (arr) => {
-        const items =  arr.map((item, i) => {
+        const items =  arr.map((item) => {
 
             return (
                 <li 
-                    className={'comics__item'}
+                    className='comics__item'
                     key={item.id}
-                    // onClick={() => {
-                    //     props.onCharSelected(item.id);
-                    // }}
-                    onKeyPress={(e) => {
-                        if (e.key === ' ' || e.key === "Enter") {
-                            props.onCharSelected(item.id);
-                        }
-                    }}
                     >
+                    <Link to={`/comics/${item.id}`}>
                         <img 
                             src={item.thumbnail} 
                             alt={item.title}
@@ -59,6 +53,7 @@ const ComicsList = (props) => {
                             />
                         <div className="comics__item-name">{item.title}</div>
                         <div className="comics__item-price">{item.price}</div>
+                    </Link>
                 </li>
             )
         });
@@ -87,9 +82,11 @@ const ComicsList = (props) => {
                 <div className="inner">load more</div>
             </button>
         </div>
-
-        
     )
+}
+
+ComicsList.propTypes = {
+    onCharSelected: PropTypes.func.isRequired
 }
 
 export default ComicsList;
