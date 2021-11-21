@@ -1,11 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import {useState, useEffect} from 'react';
-import Spinner from '../spinner/Spinner';
-import ErrorMessage from '../errorMessage/ErrorMessage';
-import MarvelService from '../../services/MarvelService';
+import Spinner from '../../spinner/Spinner';
+import ErrorMessage from '../../errorMessage/ErrorMessage';
+import MarvelService from '../../../services/MarvelService';
 
 import './singleComicPage.scss';
-import xMen from '../../resources/img/x-men.png';
 
 const SingleComicPage = () => {
 
