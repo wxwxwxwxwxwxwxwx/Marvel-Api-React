@@ -6,12 +6,12 @@ import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './comicsList.scss';
 
-const ComicsList = (props) => {
+const ComicsList = () => {
 
-    const [charList, setCharList] = useState([]);
+    const [comicList, setComicList] = useState([]);
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [offset, setOffset] = useState(1541);
-    const [charEnded, setCharEnded] = useState(false);
+    const [comicEnded, setComicEnded] = useState(false);
 
     const {loading, error, getAllComics} = MarvelService();
 
@@ -22,19 +22,19 @@ const ComicsList = (props) => {
     const onRequest = (initial) => {
         initial ? setNewItemLoading(false) : setNewItemLoading(true)
         getAllComics(offset)
-            .then(onCharListLoaded)
+            .then(onComicListLoaded)
     }
 
-    const onCharListLoaded = (newCharList) => {
+    const onComicListLoaded = (newComicList) => {
         let ended = false;
-        if (newCharList.length < 8) {
+        if (newComicList.length < 8) {
             ended = true;
         }
 
-        setCharList([...charList, ...newCharList]);
+        setComicList([...comicList, ...newComicList]);
         setNewItemLoading(false);
-        setOffset(offset => offset + 9);
-        setCharEnded(ended);
+        setOffset(offset => offset + 8);
+        setComicEnded(ended);
     }
 
     const renderItems = (arr) => {
@@ -64,7 +64,7 @@ const ComicsList = (props) => {
         )
     }
 
-    const items = renderItems(charList);
+    const items = renderItems(comicList);
 
     const errorMessage = error ? <ErrorMessage/> : null;
     const spinner = loading && !newItemLoading ? <Spinner/> : null;
@@ -77,7 +77,7 @@ const ComicsList = (props) => {
             <button 
                 className="button button__main button__long"
                 disabled={newItemLoading}
-                style={{'display': charEnded ? 'none' : 'block'}}
+                style={{'display': comicEnded ? 'none' : 'block'}}
                 onClick={() => onRequest(false)}>
                 <div className="inner">load more</div>
             </button>
@@ -86,7 +86,7 @@ const ComicsList = (props) => {
 }
 
 ComicsList.propTypes = {
-    onCharSelected: PropTypes.func.isRequired
+    onComicSelected: PropTypes.func.isRequired
 }
 
 export default ComicsList;
