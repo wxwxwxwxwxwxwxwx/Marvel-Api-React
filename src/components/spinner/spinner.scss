@@ -1,0 +1,19 @@
+.spinner {
+    margin: auto;
+    background: none;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 1024px) {
+    .spinner {
+        height: 270px;
+    }
+}
+
+@media (max-width: 575px) {
+    .spinner {
+        height: 396px;
+    }
+}

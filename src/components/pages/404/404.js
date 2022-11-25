@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet";
 import {Link} from 'react-router-dom';
 
-import ErrorMessage from "../errorMessage/ErrorMessage";
+import ErrorMessage from "../../errorMessage/ErrorMessage";
+
+import './404.scss';
 
 const Page404 = () => {
     return (
@@ -13,9 +15,9 @@ const Page404 = () => {
                 />
                 <title>This page is not found</title>
             </Helmet>
-            <div>
+            <div className="error">
                 <ErrorMessage/>
-                <Link to="/">Back to main page</Link>
+                <Link className="error__btn" to="/">Back to main page</Link>
             </div>
         </div>
     )

@@ -18,3 +18,46 @@
         }
     }
 }
+
+@media (max-width: 1024px) {
+    .app {
+        &__banner {
+            padding: 0 15px 0 15px;
+            &-text {
+                padding-left: 43px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .app {
+        &__banner {
+            grid-template-columns: 70% auto;
+            img {
+                &:first-child {
+                    display: none;
+                }
+            }
+            &-text {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .app {
+        &__banner {
+            grid-template-columns: 75% auto;
+            align-items: center;
+            img {
+                width: 100%;
+            }
+            &-text {
+                padding-top: 0;
+                font-size: 18px;
+            }
+        }
+    }
+}

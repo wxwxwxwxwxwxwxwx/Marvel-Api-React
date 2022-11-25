@@ -5,7 +5,7 @@ import AppHeader from "../appHeader/AppHeader";
 
 import Spinner from '../spinner/Spinner';
 
-const Page404 = lazy(() => import('../pages/404'));
+const Page404 = lazy(() => import('../pages/404/404'));
 const MainPage = lazy(() => import('../pages/MainPage'));
 const ComicsPage = lazy(() => import('../pages/ComicsPage'));
 const SingleComicLayout = lazy(() => import('../pages/singleComicLayout/SingleComicLayout'));
