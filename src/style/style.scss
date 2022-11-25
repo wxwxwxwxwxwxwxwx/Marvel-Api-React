@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
     position: relative;
     .bg-decoration {
         position: absolute;
-        right: -174px;
+        left: -174px;
         bottom: -70px;
         z-index: -1;
     }
@@ -78,5 +78,35 @@ main {
     }
     100% {
         opacity: 1
+    }
+}
+
+@media (max-width: 1440px) {
+    .app {
+        width: 85%;
+        .bg-decoration {
+            left: 0px;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .app {
+        width: 95%;
+    }
+}
+
+@media (max-width: 575px) {
+    main {
+        margin-top: 35px;
+    }
+    .app {
+        padding: 35px 0;
+    }
+    .bg-decoration {
+        position: absolute;
+        left: 0;
+        bottom: -70px;
+        width: 90%;
     }
 }

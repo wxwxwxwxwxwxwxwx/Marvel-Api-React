@@ -14,12 +14,14 @@
         }
     }
     &__menu {
+        display: flex;
+        align-items: flex-end;
         ul {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
             font-size: 24px;
-            line-height: 32px;
+            line-height: 35px;
             li {
                 margin: 0 8px;
                 a:hover {
@@ -33,4 +35,41 @@
 
 .active {
     color: $main-color;
+}
+
+@media (max-width: 575px) {
+    .app {
+        &__header {
+            flex-direction: column;
+        }
+        &__menu {
+            ul {
+                justify-content: start;
+                margin-top: 15px;
+                li {
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    .app {
+        &__header {
+            h1 {
+                font-size: 26px;
+            }
+        }
+        &__menu {
+            ul {
+                margin-top: 10px;
+                li {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
 }

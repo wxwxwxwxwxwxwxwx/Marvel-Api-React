@@ -58,6 +58,57 @@
     &__decoration {
         position: absolute;
         bottom: 14px;
-        right: -37px;
+        right: -25px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .randomchar {
+        &__block, &__static {
+            padding: 30px 20px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .randomchar {
+        grid-template-columns: repeat(1, 100%);
+        &__block, &__static {
+            padding: 45px 30px;
+        }
+        &__decoration {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .randomchar {
+        &__block, &__static {
+            padding: 25px 20px;
+        }
+        &__block {
+            grid-template-columns: repeat(1, 100%);
+            min-height: 396px;
+        }
+        &__info {
+            padding-top: 25px;
+            grid-template-rows: minmax(29px, auto) auto 38px;
+        }
+        &__name {
+            font-size: 20px;
+        }
+        &__img {
+            width: 100%;
+        }
+        &__static {
+            p {
+                font-size: 20px;
+            }
+        }
+        &__decoration {
+            display: none;
+        }
     }
 }
