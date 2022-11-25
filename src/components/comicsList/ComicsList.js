@@ -86,7 +86,7 @@ const ComicsList = () => {
 }
 
 ComicsList.propTypes = {
-    onComicSelected: PropTypes.func.isRequired
+    onComicSelected: PropTypes.func
 }
 
 export default ComicsList;

@@ -12,7 +12,7 @@ const SinglePage = ({Component, dataType}) => {
         const {loading, error, getComic, getCharacterById, clearError} = MarvelService();
 
         useEffect(() => {
-            updateData()
+            updateData();
         }, [id])
 
         const updateData = () => {
@@ -24,6 +24,8 @@ const SinglePage = ({Component, dataType}) => {
                     break;
                 case 'character':
                     getCharacterById(id).then(onDataLoaded);
+                    break;
+                    
             }
         }
 
