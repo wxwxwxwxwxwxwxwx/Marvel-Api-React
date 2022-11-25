@@ -15,7 +15,7 @@ const ComicsPage = () => {
                     />
                 <title>Comics Page</title>
             </Helmet>
-            <AppBanner/>
+            {/* <AppBanner/> */}
             <ErrorBoundary>
                 <ComicsList/>
             </ErrorBoundary>
