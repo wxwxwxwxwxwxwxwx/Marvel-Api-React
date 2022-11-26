@@ -45,7 +45,7 @@ const ComicsList = () => {
                     className='comics__item'
                     key={item.id}
                     >
-                    <Link to={`Marvel-Api-React/comics/${item.id}`}>
+                    <Link to={`/Marvel-Api-React/comics/${item.id}`}>
                         <img 
                             src={item.thumbnail} 
                             alt={item.title}
