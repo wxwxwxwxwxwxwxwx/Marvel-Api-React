@@ -20,7 +20,7 @@ const SingleCharacterLayout = ({data}) => {
                 <h2 className="single-comic__name">{name}</h2>
                 <p className="single-comic__descr">{description}</p>
             </div>
-            <Link to="/" className="single-comic__back">Back to all</Link>
+            <Link to="/Marvel-Api-React/" className="single-comic__back">Back to all</Link>
         </div>
     )
 }

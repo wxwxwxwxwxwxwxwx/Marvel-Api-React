@@ -17,7 +17,7 @@ const Page404 = () => {
             </Helmet>
             <div className="error">
                 <ErrorMessage/>
-                <Link className="error__btn" to="/">Back to main page</Link>
+                <Link className="error__btn" to="/Marvel-Api-React/">Back to main page</Link>
             </div>
         </div>
     )
