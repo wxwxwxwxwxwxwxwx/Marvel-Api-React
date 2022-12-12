@@ -4,9 +4,6 @@ import './appHeader.scss';
 const AppHeader = () => {
 
     const location = useLocation();
-    console.log(location);
-
-
 
     return (
         <header className="app__header">
